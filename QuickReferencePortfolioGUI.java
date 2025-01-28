@@ -2,6 +2,7 @@ package QuickReferencePortfolio;
 import javax.swing.*;
 import java.awt.*;
 
+// this is the main class
 public class QuickReferencePortfolioGUI extends JFrame {
     public QuickReferencePortfolioGUI() {
         setTitle("Java Quick Reference");
