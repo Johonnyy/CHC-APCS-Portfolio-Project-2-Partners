@@ -314,7 +314,10 @@ public class QuickReferencePortfolioGUI extends JFrame {
         JTextArea javaDef = new JTextArea("Java Definition: Constructs a new String object that "
                                         + "\nrepresents the same sequence of characters as str"
                                         + "\n"
-                                        + "\nSimple Definition: Creates a new String that is ");
+                                        + "\nSimple Definition: Creates a new String that is a "
+                                        + "\ncopy of the arguement String"
+                                        + "\n"
+                                        + "\nTry it: ");
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         string1stOptPanel.add(javaDef);
         return string1stOptPanel;
