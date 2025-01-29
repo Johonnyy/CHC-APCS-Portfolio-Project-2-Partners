@@ -315,7 +315,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
                                         + "\nrepresents the same sequence of characters as str"
                                         + "\n"
                                         + "\nSimple Definition: Creates a new String that is a "
-                                        + "\ncopy of the arguement String"
+                                        + "\ncopy of the String in parenthesis"
                                         + "\n"
                                         + "\nTry it: ");
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -325,8 +325,10 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createString2ndOptPanel() {
         JPanel string2ndOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the number of characters in \na" 
-                                        + " String object");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the number of characters in "
+                                        + "\na String object"
+                                        + "\n"
+                                        + "\nTry it: ");
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         string2ndOptPanel.add(javaDef);
         return string2ndOptPanel;
@@ -335,7 +337,13 @@ public class QuickReferencePortfolioGUI extends JFrame {
     public JPanel createString3rdOptPanel() {
         JPanel string3rdOptPanel = new JPanel(new BorderLayout());
         JTextArea javaDef = new JTextArea("Java Definition: Returns the substring beginning at "
-                                        + "\nindex from and ending at index to - 1");
+                                        + "\nindex from and ending at index to - 1"
+                                        + "\n"
+                                        + "\nSimple Definition: Returns the part of the String "
+                                        + "\nthat starts at 1st arguement and ends at 2nd "
+                                        + "\narguement"
+                                        + "\n"
+                                        + "\nTry it: ");
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         string3rdOptPanel.add(javaDef);
         return string3rdOptPanel;
@@ -369,9 +377,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createString7thOptPanel() {
         JPanel string7thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns a value <0 if this is less \nthan "
-                                        + "other; returns zero if this is equal to other; \nreturns a "
-                                        + "value >0 if this is greater than other");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns a value <0 if this is less "
+                                        + "\nthan other; returns zero if this is equal to other; "
+                                        + "\nreturns a value >0 if this is greater than other");
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         string7thOptPanel.add(javaDef);
         return string7thOptPanel;
