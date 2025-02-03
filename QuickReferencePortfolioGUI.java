@@ -339,9 +339,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
         JTextArea javaDef = new JTextArea("Java Definition: Returns the substring beginning at "
                                         + "\nindex from and ending at index to - 1"
                                         + "\n"
-                                        + "\nSimple Definition: Returns the part of the String "
-                                        + "\nthat starts at 1st arguement and ends at 2nd "
-                                        + "\narguement"
+                                        + "\nSimple Definition: Returns the part of the String that"
+                                        + "\nstarts at 1st arguement and ends at 2nd arguement"
+                                        + "\n- 1"
                                         + "\n"
                                         + "\nTry it: ");
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -351,7 +351,13 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createString4thOptPanel() {
         JPanel string4thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns substring(from, length())");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns substring(from, length())"
+                                        + "\n"
+                                        + "\nSimple Definition: Returns the part of the String that"
+                                        + "\nstarts at the arguement and includes everything until"
+                                        + "\nthe end"
+                                        + "\n"
+                                        + "\nTry it: ");
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         string4thOptPanel.add(javaDef);
         return string4thOptPanel;
@@ -360,7 +366,12 @@ public class QuickReferencePortfolioGUI extends JFrame {
     public JPanel createString5thOptPanel() {
         JPanel string5thOptPanel = new JPanel(new BorderLayout());
         JTextArea javaDef = new JTextArea("Java Definition: Returns the index of the first " 
-                                        + "\noccurrence of str; returns -1 if not found");
+                                        + "\noccurrence of str; returns -1 if not found"
+                                        + "\n"
+                                        + "\nSimple Definition: Returns the index of where str"
+                                        + "\nstarts; returns -1 if not found"
+                                        + "\n"
+                                        + "\nTry it: ");
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         string5thOptPanel.add(javaDef);
         return string5thOptPanel;
@@ -369,7 +380,12 @@ public class QuickReferencePortfolioGUI extends JFrame {
     public JPanel createString6thOptPanel() {
         JPanel string6thOptPanel = new JPanel(new BorderLayout());
         JTextArea javaDef = new JTextArea("Java Definition: Returns true if this is equal to other; "
-                                        + "\nreturns false otherwise");
+                                        + "\nreturns false otherwise"
+                                        + "\n"
+                                        + "\nSimple Definition: Returns true if the string is equal"
+                                        + "\nto the arguement; returns false otherwise"
+                                        + "\n"
+                                        + "\nTry it: ");
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         string6thOptPanel.add(javaDef);
         return string6thOptPanel;
