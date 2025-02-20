@@ -330,8 +330,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
         // Constraints for the layout
         GridBagConstraints constr = new GridBagConstraints();
 
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the number of characters in "
-                + "\na String object"
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the number of characters in a String object"
                 + "\n"
                 + "\nTry it: ");
         javaDef.setLineWrap(true);
@@ -488,8 +487,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createInteger1stOptPanel() {
         JPanel integer1stOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea(
-                "Java Definition: Constructs a new Integer object that represents the specified int value");
+        JTextArea javaDef = new JTextArea("Java Definition: Constructs a new Integer object that represents the specified int value"
+                + "\n"
+                + "\nSimple Definition: Creates a new Integer that is a copy of the int in parenthesis (Clarification: Integer is an object, int is a number)"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -499,7 +501,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createInteger2ndOptPanel() {
         JPanel integer2ndOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: The minimum value represented by an int or Integer");
+        JTextArea javaDef = new JTextArea("Java Definition: The minimum value represented by an int or Integer"
+                + "\n"
+                + "\nSimple Definition: Stores the smallest value that an int can be, which is -2147483648"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -509,7 +515,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createInteger3rdOptPanel() {
         JPanel integer3rdOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: The maximum value represented by an int or Integer");
+        JTextArea javaDef = new JTextArea("Java Definition: The maximum value represented by an int or Integer"
+                + "\n"
+                + "\nSimple Definition: Stores the largest value that an int can be, which is 2147483647"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -519,7 +529,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createInteger4thOptPanel() {
         JPanel integer4thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Integer int");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Integer int"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
