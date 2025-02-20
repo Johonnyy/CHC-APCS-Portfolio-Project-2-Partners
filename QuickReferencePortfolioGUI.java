@@ -1,4 +1,5 @@
 package QuickReferencePortfolio;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -25,10 +26,10 @@ public class QuickReferencePortfolioGUI extends JFrame {
         JPanel menuPanel = new JPanel(new GridLayout(6, 1));
 
         String[] options = {
-            "String Class", "Integer Class", "Double Class", 
-            "Math Class", "ArrayList Class", "Object Class"
+                "String Class", "Integer Class", "Double Class",
+                "Math Class", "ArrayList Class", "Object Class"
         };
-        for (String option: options) {
+        for (String option : options) {
             JButton button = new JButton(option);
             button.setActionCommand(option);
             menuPanel.add(button);
@@ -40,82 +41,82 @@ public class QuickReferencePortfolioGUI extends JFrame {
     public void setupFunctionality(JPanel contentPanel) {
         CardLayout cardLayout = (CardLayout) contentPanel.getLayout();
 
-        //---------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------
         JPanel stringClassPanel = createStringClassPanel();
         contentPanel.add(stringClassPanel, "String Class");
-        /*(1)*/JPanel string1stOptPanel = createString1stOptPanel();
-               contentPanel.add(string1stOptPanel, "String(String str)");
-        /*(2)*/JPanel string2ndOptPanel = createString2ndOptPanel();
-               contentPanel.add(string2ndOptPanel, "int length()");
-        /*(3)*/JPanel string3rdOptPanel = createString3rdOptPanel();
-               contentPanel.add(string3rdOptPanel, "String substring(int from, int to)");
-        /*(4)*/JPanel string4thOptPanel = createString4thOptPanel();
-               contentPanel.add(string4thOptPanel, "String substring(int from)");
-        /*(5)*/JPanel string5thOptPanel = createString5thOptPanel();
-               contentPanel.add(string5thOptPanel, "int indexOf(String str)");
-        /*(6)*/JPanel string6thOptPanel = createString6thOptPanel();
-               contentPanel.add(string6thOptPanel, "boolean equals(String other)");
-        /*(7)*/JPanel string7thOptPanel = createString7thOptPanel();
-               contentPanel.add(string7thOptPanel, "int compareTo(String other)");
-        //---------------------------------------------------------------------------------------
+        /* (1) */JPanel string1stOptPanel = createString1stOptPanel();
+        contentPanel.add(string1stOptPanel, "String(String str)");
+        /* (2) */JPanel string2ndOptPanel = createString2ndOptPanel();
+        contentPanel.add(string2ndOptPanel, "int length()");
+        /* (3) */JPanel string3rdOptPanel = createString3rdOptPanel();
+        contentPanel.add(string3rdOptPanel, "String substring(int from, int to)");
+        /* (4) */JPanel string4thOptPanel = createString4thOptPanel();
+        contentPanel.add(string4thOptPanel, "String substring(int from)");
+        /* (5) */JPanel string5thOptPanel = createString5thOptPanel();
+        contentPanel.add(string5thOptPanel, "int indexOf(String str)");
+        /* (6) */JPanel string6thOptPanel = createString6thOptPanel();
+        contentPanel.add(string6thOptPanel, "boolean equals(String other)");
+        /* (7) */JPanel string7thOptPanel = createString7thOptPanel();
+        contentPanel.add(string7thOptPanel, "int compareTo(String other)");
+        // ---------------------------------------------------------------------------------------
 
         JPanel integerClassPanel = createIntegerClassPanel();
         contentPanel.add(integerClassPanel, "Integer Class");
-        /*(1)*/JPanel integer1stOptPanel = createInteger1stOptPanel();
-               contentPanel.add(integer1stOptPanel, "Integer(int value)");
-        /*(2)*/JPanel integer2ndOptPanel = createInteger2ndOptPanel();
-               contentPanel.add(integer2ndOptPanel, "Integer.MIN_VALUE");
-        /*(3)*/JPanel integer3rdOptPanel = createInteger3rdOptPanel();
-               contentPanel.add(integer3rdOptPanel, "Integer.MAX_VALUE");
-        /*(4)*/JPanel integer4thOptPanel = createInteger4thOptPanel();
-               contentPanel.add(integer4thOptPanel, "int intValue()");
-        //---------------------------------------------------------------------------------------
+        /* (1) */JPanel integer1stOptPanel = createInteger1stOptPanel();
+        contentPanel.add(integer1stOptPanel, "Integer(int value)");
+        /* (2) */JPanel integer2ndOptPanel = createInteger2ndOptPanel();
+        contentPanel.add(integer2ndOptPanel, "Integer.MIN_VALUE");
+        /* (3) */JPanel integer3rdOptPanel = createInteger3rdOptPanel();
+        contentPanel.add(integer3rdOptPanel, "Integer.MAX_VALUE");
+        /* (4) */JPanel integer4thOptPanel = createInteger4thOptPanel();
+        contentPanel.add(integer4thOptPanel, "int intValue()");
+        // ---------------------------------------------------------------------------------------
 
         JPanel doubleClassPanel = createDoubleClassPanel();
         contentPanel.add(doubleClassPanel, "Double Class");
-        /*(1)*/JPanel double1stOptPanel = createDouble1stOptPanel();
-               contentPanel.add(double1stOptPanel, "Double(double value)");
-        /*(2)*/JPanel double2ndOptPanel = createDouble2ndOptPanel();
-               contentPanel.add(double2ndOptPanel, "double doubleValue()");
-        //---------------------------------------------------------------------------------------
+        /* (1) */JPanel double1stOptPanel = createDouble1stOptPanel();
+        contentPanel.add(double1stOptPanel, "Double(double value)");
+        /* (2) */JPanel double2ndOptPanel = createDouble2ndOptPanel();
+        contentPanel.add(double2ndOptPanel, "double doubleValue()");
+        // ---------------------------------------------------------------------------------------
 
         JPanel mathClassPanel = createMathClassPanel();
         contentPanel.add(mathClassPanel, "Math Class");
-        /*(1)*/JPanel math1stOptPanel = createMath1stOptPanel();
-               contentPanel.add(math1stOptPanel, "static int abs(int x)");
-        /*(2)*/JPanel math2ndOptPanel = createMath2ndOptPanel();
-               contentPanel.add(math2ndOptPanel, "static double abs(double x)");
-        /*(3)*/JPanel math3rdOptPanel = createMath3rdOptPanel();
-               contentPanel.add(math3rdOptPanel, "static double pow(double base, double exponent)");
-        /*(4)*/JPanel math4thOptPanel = createMath4thOptPanel();
-               contentPanel.add(math4thOptPanel, "static double sqrt(double x)");
-        /*(5)*/JPanel math5thOptPanel = createMath5thOptPanel();
-               contentPanel.add(math5thOptPanel, "static double random()");
-        //---------------------------------------------------------------------------------------
+        /* (1) */JPanel math1stOptPanel = createMath1stOptPanel();
+        contentPanel.add(math1stOptPanel, "static int abs(int x)");
+        /* (2) */JPanel math2ndOptPanel = createMath2ndOptPanel();
+        contentPanel.add(math2ndOptPanel, "static double abs(double x)");
+        /* (3) */JPanel math3rdOptPanel = createMath3rdOptPanel();
+        contentPanel.add(math3rdOptPanel, "static double pow(double base, double exponent)");
+        /* (4) */JPanel math4thOptPanel = createMath4thOptPanel();
+        contentPanel.add(math4thOptPanel, "static double sqrt(double x)");
+        /* (5) */JPanel math5thOptPanel = createMath5thOptPanel();
+        contentPanel.add(math5thOptPanel, "static double random()");
+        // ---------------------------------------------------------------------------------------
 
         JPanel arrayListClassPanel = createArrayListClassPanel();
         contentPanel.add(arrayListClassPanel, "ArrayList Class");
-        /*(1)*/JPanel arrayList1stOptPanel = createArrayList1stOptPanel();
-               contentPanel.add(arrayList1stOptPanel, "int size()");
-        /*(2)*/JPanel arrayList2ndOptPanel = createArrayList2ndOptPanel();
-               contentPanel.add(arrayList2ndOptPanel, "boolean add(E obj)");
-        /*(3)*/JPanel arrayList3rdOptPanel = createArrayList3rdOptPanel();
-               contentPanel.add(arrayList3rdOptPanel, "void add(int index, E obj)");
-        /*(4)*/JPanel arrayList4thOptPanel = createArrayList4thOptPanel();
-               contentPanel.add(arrayList4thOptPanel, "E get(int index)");
-        /*(5)*/JPanel arrayList5thOptPanel = createArrayList5thOptPanel();
-               contentPanel.add(arrayList5thOptPanel, "E set(int index, E obj)");
-        /*(6)*/JPanel arrayList6thOptPanel = createArrayList6thOptPanel();
-               contentPanel.add(arrayList6thOptPanel, "E remove(int index)");
-        //---------------------------------------------------------------------------------------
+        /* (1) */JPanel arrayList1stOptPanel = createArrayList1stOptPanel();
+        contentPanel.add(arrayList1stOptPanel, "int size()");
+        /* (2) */JPanel arrayList2ndOptPanel = createArrayList2ndOptPanel();
+        contentPanel.add(arrayList2ndOptPanel, "boolean add(E obj)");
+        /* (3) */JPanel arrayList3rdOptPanel = createArrayList3rdOptPanel();
+        contentPanel.add(arrayList3rdOptPanel, "void add(int index, E obj)");
+        /* (4) */JPanel arrayList4thOptPanel = createArrayList4thOptPanel();
+        contentPanel.add(arrayList4thOptPanel, "E get(int index)");
+        /* (5) */JPanel arrayList5thOptPanel = createArrayList5thOptPanel();
+        contentPanel.add(arrayList5thOptPanel, "E set(int index, E obj)");
+        /* (6) */JPanel arrayList6thOptPanel = createArrayList6thOptPanel();
+        contentPanel.add(arrayList6thOptPanel, "E remove(int index)");
+        // ---------------------------------------------------------------------------------------
 
         JPanel objectClassPanel = createObjectClassPanel();
         contentPanel.add(objectClassPanel, "Object Class");
-        /*(1)*/JPanel object1stOptPanel = createObject1stOptPanel();
-               contentPanel.add(object1stOptPanel, "boolean equals(Object other)");
-        /*(2)*/JPanel object2ndOptPanel = createObject2ndOptPanel();
-               contentPanel.add(object2ndOptPanel, "String toString()");
-        //---------------------------------------------------------------------------------------
+        /* (1) */JPanel object1stOptPanel = createObject1stOptPanel();
+        contentPanel.add(object1stOptPanel, "boolean equals(Object other)");
+        /* (2) */JPanel object2ndOptPanel = createObject2ndOptPanel();
+        contentPanel.add(object2ndOptPanel, "String toString()");
+        // ---------------------------------------------------------------------------------------
 
         for (Component c : ((JPanel) getContentPane().getComponent(0)).getComponents()) {
             if (c instanceof JButton) {
@@ -144,8 +145,8 @@ public class QuickReferencePortfolioGUI extends JFrame {
                 });
             }
         }
-        //---------------------------------------------------------------------------------------------
-        
+        // ---------------------------------------------------------------------------------------------
+
         for (Component c : stringClassPanel.getComponents()) {
             if (c instanceof JButton) {
                 ((JButton) c).addActionListener(e -> {
@@ -176,7 +177,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
                 });
             }
         }
-        //---------------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------------
 
         for (Component c : integerClassPanel.getComponents()) {
             if (c instanceof JButton) {
@@ -199,7 +200,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
                 });
             }
         }
-        //---------------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------------
 
         for (Component c : doubleClassPanel.getComponents()) {
             if (c instanceof JButton) {
@@ -216,7 +217,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
                 });
             }
         }
-        //---------------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------------
 
         for (Component c : mathClassPanel.getComponents()) {
             if (c instanceof JButton) {
@@ -242,7 +243,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
                 });
             }
         }
-        //---------------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------------
 
         for (Component c : arrayListClassPanel.getComponents()) {
             if (c instanceof JButton) {
@@ -271,7 +272,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
                 });
             }
         }
-        //---------------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------------
 
         for (Component c : objectClassPanel.getComponents()) {
             if (c instanceof JButton) {
@@ -289,17 +290,17 @@ public class QuickReferencePortfolioGUI extends JFrame {
             }
         }
     }
-    //End of setupFunctionality method
-    //---------------------------------------------------------------------------------------------
+    // End of setupFunctionality method
+    // ---------------------------------------------------------------------------------------------
 
-    //StringClassPanel and options
+    // StringClassPanel and options
     public JPanel createStringClassPanel() {
         JPanel stringClassPanel = new JPanel(new GridLayout(7, 1));
 
         String[] stringClassOptions = {
-            "String(String str)", "int length()", "String substring(int from, int to)",
-            "String substring(int from)", "int indexOf(String str)", "boolean equals(String other)",
-            "int compareTo(String other)"
+                "String(String str)", "int length()", "String substring(int from, int to)",
+                "String substring(int from)", "int indexOf(String str)", "boolean equals(String other)",
+                "int compareTo(String other)"
         };
         for (String option : stringClassOptions) {
             JButton button = new JButton(option);
@@ -308,14 +309,15 @@ public class QuickReferencePortfolioGUI extends JFrame {
         }
         return stringClassPanel;
     }
-    
+
     public JPanel createString1stOptPanel() {
         JPanel string1stOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Constructs a new String object that represents the same sequence of characters as str"
-                                        + "\n"
-                                        + "\nSimple Definition: Creates a new String that is a copy of the String in parenthesis"
-                                        + "\n"
-                                        + "\nTry it: ");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Constructs a new String object that represents the same sequence of characters as str"
+                        + "\n"
+                        + "\nSimple Definition: Creates a new String that is a copy of the String in parenthesis"
+                        + "\n"
+                        + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -324,37 +326,101 @@ public class QuickReferencePortfolioGUI extends JFrame {
     }
 
     public JPanel createString2ndOptPanel() {
-        JPanel string2ndOptPanel = new JPanel(new BorderLayout());
+        JPanel string2ndOptPanel = new JPanel(new GridBagLayout());
+        // Constraints for the layout
+        GridBagConstraints constr = new GridBagConstraints();
+
         JTextArea javaDef = new JTextArea("Java Definition: Returns the number of characters in "
-                                        + "\na String object"
-                                        + "\n"
-                                        + "\nTry it: ");
+                + "\na String object"
+                + "\n"
+                + "\nTry it: ");
+        javaDef.setLineWrap(true);
+        javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        string2ndOptPanel.add(javaDef);
+
+        JLabel label = new JLabel("Enter a string: ");
+        JTextField textField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "string.length():" + textField.getText().length());
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        string2ndOptPanel.add(javaDef, constr);
+        constr.gridwidth = 1;
+        constr.gridy = 1;
+        string2ndOptPanel.add(label, constr);
+        constr.gridx = 1;
+        constr.gridwidth = 2;
+        string2ndOptPanel.add(textField, constr);
+        constr.gridy = 2;
+        constr.gridx = 0;
+        string2ndOptPanel.add(button, constr);
+
         return string2ndOptPanel;
     }
 
     public JPanel createString3rdOptPanel() {
-        JPanel string3rdOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the substring beginning at index from and ending at index to - 1"
-                                        + "\n"
-                                        + "\nSimple Definition: Returns the part of the String that starts at 1st arguement and ends at 2nd arguement - 1"
-                                        + "\n"
-                                        + "\nTry it: ");
+        JPanel string3rdOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
+
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Returns the substring beginning at index from and ending at index to - 1"
+                        + "\n"
+                        + "\nSimple Definition: Returns the part of the String that starts at 1st arguement and ends at 2nd arguement - 1"
+                        + "\n"
+                        + "\nTry it: ");
+        JLabel labelInput = new JLabel("Enter a string: ");
+        JLabel labelStart = new JLabel("Enter the starting index: ");
+        JLabel labelEnding = new JLabel("Enter the ending index (optional): ");
+        JTextField inputField = new JTextField(20);
+        JTextField startTextField = new JTextField(20);
+        JTextField endingTextField = new JTextField(20);
+        JButton button = new JButton("Submit");
+        button.addActionListener(e -> {
+            String str = inputField.getText();
+            int from = Integer.parseInt(startTextField.getText());
+            int to = endingTextField.getText().isEmpty() ? str.length() : Integer.parseInt(endingTextField.getText());
+            JOptionPane.showMessageDialog(null,
+                    "string.substring(" + from + ", " + to + "): " + str.substring(from, to));
+        });
+
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        string3rdOptPanel.add(javaDef);
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        string3rdOptPanel.add(javaDef, constr);
+        constr.gridwidth = 1;
+        constr.gridy = 1;
+        string3rdOptPanel.add(labelInput, constr);
+        constr.gridx = 1;
+        string3rdOptPanel.add(inputField, constr);
+        constr.gridy = 2;
+        constr.gridx = 0;
+        string3rdOptPanel.add(labelStart, constr);
+        constr.gridx = 1;
+        string3rdOptPanel.add(startTextField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        string3rdOptPanel.add(labelEnding, constr);
+        constr.gridx = 1;
+        string3rdOptPanel.add(endingTextField, constr);
+        constr.gridy = 4;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        string3rdOptPanel.add(button, constr);
         return string3rdOptPanel;
     }
 
     public JPanel createString4thOptPanel() {
         JPanel string4thOptPanel = new JPanel(new BorderLayout());
         JTextArea javaDef = new JTextArea("Java Definition: Returns substring(from, length())"
-                                        + "\n"
-                                        + "\nSimple Definition: Returns the part of the String that starts at the arguement and includes everything until the end"
-                                        + "\n"
-                                        + "\nTry it: ");
+                + "\n"
+                + "\nSimple Definition: Returns the part of the String that starts at the arguement and includes everything until the end"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -364,11 +430,12 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createString5thOptPanel() {
         JPanel string5thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the index of the first occurrence of str; returns -1 if not found"
-                                        + "\n"
-                                        + "\nSimple Definition: Returns the index of where str starts; returns -1 if not found"
-                                        + "\n"
-                                        + "\nTry it: ");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Returns the index of the first occurrence of str; returns -1 if not found"
+                        + "\n"
+                        + "\nSimple Definition: Returns the index of where str starts; returns -1 if not found"
+                        + "\n"
+                        + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -378,11 +445,12 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createString6thOptPanel() {
         JPanel string6thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns true if this is equal to other; returns false otherwise"
-                                        + "\n"
-                                        + "\nSimple Definition: Returns true if the string is equal to the arguement; returns false otherwise"
-                                        + "\n"
-                                        + "\nTry it: ");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Returns true if this is equal to other; returns false otherwise"
+                        + "\n"
+                        + "\nSimple Definition: Returns true if the string is equal to the arguement; returns false otherwise"
+                        + "\n"
+                        + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -392,22 +460,23 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createString7thOptPanel() {
         JPanel string7thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns a value <0 if this is less than other; returns zero if this is equal to other; returns a value >0 if this is greater than other");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Returns a value <0 if this is less than other; returns zero if this is equal to other; returns a value >0 if this is greater than other");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         string7thOptPanel.add(javaDef);
         return string7thOptPanel;
     }
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
 
-    //IntegerClassPanel and options
+    // IntegerClassPanel and options
     public JPanel createIntegerClassPanel() {
         JPanel integerClassPanel = new JPanel(new GridLayout(4, 1));
- 
+
         String[] integerClassOptions = {
-            "Integer(int value)", "Integer.MIN_VALUE", 
-            "Integer.MAX_VALUE", "int intValue()"
+                "Integer(int value)", "Integer.MIN_VALUE",
+                "Integer.MAX_VALUE", "int intValue()"
         };
         for (String option : integerClassOptions) {
             JButton button = new JButton(option);
@@ -419,7 +488,8 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createInteger1stOptPanel() {
         JPanel integer1stOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Constructs a new Integer object that represents the specified int value");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Constructs a new Integer object that represents the specified int value");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -456,14 +526,14 @@ public class QuickReferencePortfolioGUI extends JFrame {
         integer4thOptPanel.add(javaDef);
         return integer4thOptPanel;
     }
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
 
-    //DoubleClassPanel and options
+    // DoubleClassPanel and options
     public JPanel createDoubleClassPanel() {
         JPanel doubleClassPanel = new JPanel(new GridLayout(2, 1));
 
         String[] doubleClassOptions = {
-            "Double(double value)", "double doubleValue()"
+                "Double(double value)", "double doubleValue()"
         };
         for (String option : doubleClassOptions) {
             JButton button = new JButton(option);
@@ -475,7 +545,8 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createDouble1stOptPanel() {
         JPanel double1stOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Constructs a new Double object that represents the specified double value");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Constructs a new Double object that represents the specified double value");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -492,16 +563,16 @@ public class QuickReferencePortfolioGUI extends JFrame {
         double2ndOptPanel.add(javaDef);
         return double2ndOptPanel;
     }
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
 
-    //MathClassPanel and options
+    // MathClassPanel and options
     public JPanel createMathClassPanel() {
         JPanel mathClassPanel = new JPanel(new GridLayout(5, 1));
 
         String[] mathClassOptions = {
-            "static int abs(int x)", "static double abs(double x)",
-            "static double pow(double base, double exponent)",
-            "static double sqrt(double x)", "static double random()"
+                "static int abs(int x)", "static double abs(double x)",
+                "static double pow(double base, double exponent)",
+                "static double sqrt(double x)", "static double random()"
         };
         for (String option : mathClassOptions) {
             JButton button = new JButton(option);
@@ -533,7 +604,8 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createMath3rdOptPanel() {
         JPanel math3rdOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of the first parameter raised to the power of the second parameter");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Returns the value of the first parameter raised to the power of the second parameter");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -553,22 +625,23 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createMath5thOptPanel() {
         JPanel math5thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns a double value greater than or equal to 0.0 and less than 1.0");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Returns a double value greater than or equal to 0.0 and less than 1.0");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         math5thOptPanel.add(javaDef);
         return math5thOptPanel;
     }
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
 
-    //ArrayListClassPanel and options
+    // ArrayListClassPanel and options
     public JPanel createArrayListClassPanel() {
         JPanel arrayListClassPanel = new JPanel(new GridLayout(6, 1));
 
         String[] arrayListClassOptions = {
-            "int size()", "boolean add(E obj)", "void add(int index, E obj)",
-            "E get(int index)", "E set(int index, E obj)", "E remove(int index)"
+                "int size()", "boolean add(E obj)", "void add(int index, E obj)",
+                "E get(int index)", "E set(int index, E obj)", "E remove(int index)"
         };
         for (String option : arrayListClassOptions) {
             JButton button = new JButton(option);
@@ -600,7 +673,8 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createArrayList3rdOptPanel() {
         JPanel arrayList3rdOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Inserts obj at position index (0 <= index <= size), moving elements at position index and higher to the right (adds 1 to their indices) and adds 1 to size");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Inserts obj at position index (0 <= index <= size), moving elements at position index and higher to the right (adds 1 to their indices) and adds 1 to size");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -620,7 +694,8 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createArrayList5thOptPanel() {
         JPanel arrayList5thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Replaces the element at position index with obj; returns the element formerly at position index");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Replaces the element at position index with obj; returns the element formerly at position index");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -630,21 +705,22 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createArrayList6thOptPanel() {
         JPanel arrayList6thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Removes element from position index, moving elements at position index + 1 and higher to the left (subtracts 1 from their indices) and subtracts 1 from size; returns the element formerly at position index");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Removes element from position index, moving elements at position index + 1 and higher to the left (subtracts 1 from their indices) and subtracts 1 from size; returns the element formerly at position index");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         arrayList6thOptPanel.add(javaDef);
         return arrayList6thOptPanel;
     }
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
 
-    //ObjectClassPanel and options
+    // ObjectClassPanel and options
     public JPanel createObjectClassPanel() {
         JPanel objectClassPanel = new JPanel(new GridLayout(2, 1));
 
         String[] objectClassOptions = {
-            "boolean equals(Object other)", "String toString()"
+                "boolean equals(Object other)", "String toString()"
         };
         for (String option : objectClassOptions) {
             JButton button = new JButton(option);
@@ -668,4 +744,3 @@ public class QuickReferencePortfolioGUI extends JFrame {
         SwingUtilities.invokeLater(QuickReferencePortfolioGUI::new);
     }
 }
-
