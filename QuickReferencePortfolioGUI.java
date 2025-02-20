@@ -337,6 +337,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
+        javaDef.setSize(400, 100);
 
         JLabel label = new JLabel("Enter a string: ");
         JTextField textField = new JTextField(20);
@@ -346,7 +347,8 @@ public class QuickReferencePortfolioGUI extends JFrame {
             JOptionPane.showMessageDialog(null, "string.length():" + textField.getText().length());
         });
 
-        constr.gridwidth = GridBagConstraints.REMAINDER;
+        constr.gridwidth = 3;
+        constr.gridy = 0;
         string2ndOptPanel.add(javaDef, constr);
         constr.gridwidth = 1;
         constr.gridy = 1;
@@ -371,19 +373,20 @@ public class QuickReferencePortfolioGUI extends JFrame {
                         + "\nSimple Definition: Returns the part of the String that starts at 1st arguement and ends at 2nd arguement - 1"
                         + "\n"
                         + "\nTry it: ");
+        javaDef.setSize(400, 100);
+
         JLabel labelInput = new JLabel("Enter a string: ");
         JLabel labelStart = new JLabel("Enter the starting index: ");
-        JLabel labelEnding = new JLabel("Enter the ending index (optional): ");
+        JLabel labelEnding = new JLabel("Enter the ending index: ");
         JTextField inputField = new JTextField(20);
         JTextField startTextField = new JTextField(20);
         JTextField endingTextField = new JTextField(20);
         JButton button = new JButton("Submit");
         button.addActionListener(e -> {
-            String str = inputField.getText();
-            int from = Integer.parseInt(startTextField.getText());
-            int to = endingTextField.getText().isEmpty() ? str.length() : Integer.parseInt(endingTextField.getText());
-            JOptionPane.showMessageDialog(null,
-                    "string.substring(" + from + ", " + to + "): " + str.substring(from, to));
+            int startIndex = Integer.parseInt(startTextField.getText());
+            int endingIndex = Integer.parseInt(endingTextField.getText());
+            JOptionPane.showMessageDialog(null, "string.substring(" + startIndex + ", " + endingIndex + "): "
+                    + inputField.getText().substring(startIndex, endingIndex));
         });
 
         javaDef.setLineWrap(true);
@@ -415,7 +418,8 @@ public class QuickReferencePortfolioGUI extends JFrame {
     }
 
     public JPanel createString4thOptPanel() {
-        JPanel string4thOptPanel = new JPanel(new BorderLayout());
+        JPanel string4thOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea("Java Definition: Returns substring(from, length())"
                 + "\n"
                 + "\nSimple Definition: Returns the part of the String that starts at the arguement and includes everything until the end"
@@ -424,12 +428,43 @@ public class QuickReferencePortfolioGUI extends JFrame {
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        string4thOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        JLabel label = new JLabel("Enter a string: ");
+        JTextField textField = new JTextField(20);
+        JLabel labelStart = new JLabel("Enter a starting index: ");
+        JTextField startField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            int startIndex = Integer.parseInt(startField.getText());
+            JOptionPane.showMessageDialog(null, "string.substring(" + startIndex + "): "
+                    + textField.getText().substring(startIndex));
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        string4thOptPanel.add(javaDef, constr);
+        constr.gridwidth = 1;
+        constr.gridy = 1;
+        string4thOptPanel.add(label, constr);
+        constr.gridx = 1;
+        string4thOptPanel.add(textField, constr);
+        constr.gridy = 2;
+        constr.gridx = 0;
+        string4thOptPanel.add(labelStart, constr);
+        constr.gridx = 1;
+        string4thOptPanel.add(startField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        string4thOptPanel.add(button, constr);
+
         return string4thOptPanel;
     }
 
     public JPanel createString5thOptPanel() {
-        JPanel string5thOptPanel = new JPanel(new BorderLayout());
+        JPanel string5thOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea(
                 "Java Definition: Returns the index of the first occurrence of str; returns -1 if not found"
                         + "\n"
@@ -439,12 +474,42 @@ public class QuickReferencePortfolioGUI extends JFrame {
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        string5thOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        JLabel label = new JLabel("Enter a string: ");
+        JTextField textField = new JTextField(20);
+        JLabel labelSearch = new JLabel("Enter a search term: ");
+        JTextField searchField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "string.indexOf(" + searchField.getText() + "): "
+                    + textField.getText().indexOf(searchField.getText()));
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        string5thOptPanel.add(javaDef, constr);
+        constr.gridwidth = 1;
+        constr.gridy = 1;
+        string5thOptPanel.add(label, constr);
+        constr.gridx = 1;
+        string5thOptPanel.add(textField, constr);
+        constr.gridy = 2;
+        constr.gridx = 0;
+        string5thOptPanel.add(labelSearch, constr);
+        constr.gridx = 1;
+        string5thOptPanel.add(searchField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        string5thOptPanel.add(button, constr);
+
         return string5thOptPanel;
     }
 
     public JPanel createString6thOptPanel() {
-        JPanel string6thOptPanel = new JPanel(new BorderLayout());
+        JPanel string6thOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea(
                 "Java Definition: Returns true if this is equal to other; returns false otherwise"
                         + "\n"
@@ -454,18 +519,80 @@ public class QuickReferencePortfolioGUI extends JFrame {
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        string6thOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        JLabel label = new JLabel("Enter a string: ");
+        JTextField textField = new JTextField(20);
+        JLabel labelSearch = new JLabel("Enter another string: ");
+        JTextField searchField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            boolean result = textField.getText().equals(searchField.getText());
+            JOptionPane.showMessageDialog(null,
+                    "\"" + textField.getText() + "\".equals(\"" + searchField.getText() + "\"): " + result);
+
+        });
+
+        constr.gridy = 0;
+        constr.gridwidth = 3;
+        string6thOptPanel.add(javaDef, constr);
+        constr.gridy = 1;
+        constr.gridwidth = 1;
+        string6thOptPanel.add(label, constr);
+        constr.gridx = 1;
+        string6thOptPanel.add(textField, constr);
+        constr.gridy = 2;
+        constr.gridx = 0;
+        string6thOptPanel.add(labelSearch, constr);
+        constr.gridx = 1;
+        string6thOptPanel.add(searchField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        string6thOptPanel.add(button, constr);
+
         return string6thOptPanel;
     }
 
     public JPanel createString7thOptPanel() {
-        JPanel string7thOptPanel = new JPanel(new BorderLayout());
+        JPanel string7thOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea(
                 "Java Definition: Returns a value <0 if this is less than other; returns zero if this is equal to other; returns a value >0 if this is greater than other");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        string7thOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        JLabel label = new JLabel("Enter a string: ");
+        JTextField textField = new JTextField(20);
+        JLabel labelSearch = new JLabel("Enter another string: ");
+        JTextField searchField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "string.compareTo(" + searchField.getText() + "): "
+                    + textField.getText().compareTo(searchField.getText()));
+        });
+
+        constr.gridwidth = 3;
+        string7thOptPanel.add(javaDef, constr);
+        constr.gridy = 1;
+        constr.gridwidth = 1;
+        string7thOptPanel.add(label, constr);
+        constr.gridx = 1;
+        string7thOptPanel.add(textField, constr);
+        constr.gridy = 2;
+        constr.gridx = 0;
+        string7thOptPanel.add(labelSearch, constr);
+        constr.gridx = 1;
+        string7thOptPanel.add(searchField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        string7thOptPanel.add(button, constr);
+
         return string7thOptPanel;
     }
     // --------------------------------------------------------------------------
