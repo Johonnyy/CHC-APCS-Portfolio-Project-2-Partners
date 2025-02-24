@@ -326,9 +326,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
         JTextArea javaDef = new JTextArea(
                 "Java Definition: Constructs a new String object that represents the same sequence of characters as str"
                         + "\n"
-                        + "\nSimple Definition: Creates a new String that is a copy of the String in parenthesis"
-                        + "\n"
-                        + "\nTry it:");
+                        + "\nSimple Definition: Creates a new String that is a copy of the String in parenthesis");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -632,9 +630,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
         JTextArea javaDef = new JTextArea(
                 "Java Definition: Constructs a new Integer object that represents the specified int value"
                         + "\n"
-                        + "\nSimple Definition: Creates a new Integer that is a copy of the int in parenthesis (Clarification: Integer is an object, int is a number)"
-                        + "\n"
-                        + "\nTry it: ");
+                        + "\nSimple Definition: Creates a new Integer that is a copy of the int in parenthesis (Clarification: Integer is an object, int is a number)");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -672,9 +668,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createInteger4thOptPanel() {
         JPanel integer4thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Integer as an int"
-                + "\n"
-                + "\nTry it: ");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Integer as an int");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -700,12 +694,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createDouble1stOptPanel() {
         JPanel double1stOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea(
-                "Java Definition: Constructs a new Double object that represents the specified double value"
-                        + "\n"
-                        + "\nSimple Definition: Creates a new Double that is a copy of the double in parenthesis"
-                        + "\n"
-                        + "\nTry it: ");
+        JTextArea javaDef = new JTextArea("Java Definition: Constructs a new Double object that represents the specified double value"
+                + "\n"
+                + "\nSimple Definition: Creates a new Double that is a copy of the double in parenthesis (Clarification: Double is an object, double is a number)");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -972,7 +963,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
     }
 
     private String displayArray() {
-        String result = "\nArray: {";
+        String result = "Array: {";
 
         for (String str : testArrayList) {
             result += "\"" + str + "\", ";
@@ -1092,12 +1083,12 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
-        javaDef.setFont(new Font("Default", Font.PLAIN, 20));
+        javaDef.setFont(new Font("Default", Font.PLAIN, 15));
         javaDef.setSize(400, 100);
 
         array.setLineWrap(true);
         array.setWrapStyleWord(true);
-        array.setFont(new Font("Default", Font.PLAIN, 20));
+        array.setFont(new Font("Default", Font.PLAIN, 15));
         array.setSize(400, 20);
 
         JButton refresh = new JButton("Refresh");
@@ -1225,12 +1216,12 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
-        javaDef.setFont(new Font("Default", Font.PLAIN, 20));
+        javaDef.setFont(new Font("Default", Font.PLAIN, 15));
         javaDef.setSize(400, 100);
 
         array.setLineWrap(true);
         array.setWrapStyleWord(true);
-        array.setFont(new Font("Default", Font.PLAIN, 20));
+        array.setFont(new Font("Default", Font.PLAIN, 15));
         array.setSize(400, 20);
 
         JButton refresh = new JButton("Refresh");
@@ -1297,12 +1288,12 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
-        javaDef.setFont(new Font("Default", Font.PLAIN, 20));
+        javaDef.setFont(new Font("Default", Font.PLAIN, 15));
         javaDef.setSize(400, 100);
 
         array.setLineWrap(true);
         array.setWrapStyleWord(true);
-        array.setFont(new Font("Default", Font.PLAIN, 20));
+        array.setFont(new Font("Default", Font.PLAIN, 15));
         array.setSize(400, 20);
 
         JButton refresh = new JButton("Refresh");
