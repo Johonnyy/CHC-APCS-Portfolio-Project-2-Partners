@@ -574,7 +574,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
                         + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
-        javaDef.setFont(new Font("Default", Font.PLAIN, 20));
+        javaDef.setFont(new Font("Default", Font.PLAIN, 15));
         javaDef.setSize(400, 100);
 
         JLabel label = new JLabel("Enter a string: ");
@@ -642,9 +642,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
         JPanel integer2ndOptPanel = new JPanel(new BorderLayout());
         JTextArea javaDef = new JTextArea("Java Definition: The minimum value represented by an int or Integer"
                 + "\n"
-                + "\nSimple Definition: Stores the smallest value that an int can be, which is -2147483648"
-                + "\n"
-                + "\nTry it: ");
+                + "\nSimple Definition: Stores the smallest value that an int can be, which is -2147483648");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -656,9 +654,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
         JPanel integer3rdOptPanel = new JPanel(new BorderLayout());
         JTextArea javaDef = new JTextArea("Java Definition: The maximum value represented by an int or Integer"
                 + "\n"
-                + "\nSimple Definition: Stores the largest value that an int can be, which is 2147483647"
-                + "\n"
-                + "\nTry it: ");
+                + "\nSimple Definition: Stores the largest value that an int can be, which is 2147483647");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -668,7 +664,14 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createInteger4thOptPanel() {
         JPanel integer4thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Integer as an int");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Integer as an int"
+                + "\n"
+                + "\nExample:"
+                + "\nInteger intObject = 10;"
+                + "\nint regularInt = intObject.intValue();"
+                + "\nSystem.out.println(regularInt);"
+                + "\n"
+                + "\nOutput: 10");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -708,7 +711,12 @@ public class QuickReferencePortfolioGUI extends JFrame {
         JPanel double2ndOptPanel = new JPanel(new BorderLayout());
         JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Double as a double"
                 + "\n"
-                + "\nTry it: ");
+                + "\nExample:"
+                + "\ndouble doubleObject = 10.7;"
+                + "\nint regularDouble = doubleObject.doubleValue();"
+                + "\nSystem.out.println(regularDouble);"
+                + "\n"
+                + "\nOutput: 10.7");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
