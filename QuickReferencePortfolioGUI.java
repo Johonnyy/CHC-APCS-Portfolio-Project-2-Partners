@@ -2,14 +2,25 @@ package QuickReferencePortfolio;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 // this is the main class
 public class QuickReferencePortfolioGUI extends JFrame {
+    private ArrayList<String> testArrayList;
+
     public QuickReferencePortfolioGUI() {
         setTitle("Java Quick Reference");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400);
         setLayout(new BorderLayout());
+
+        testArrayList = new ArrayList<>();
+        testArrayList.add("Java");
+        testArrayList.add("is");
+        testArrayList.add("the");
+        testArrayList.add("best");
+        testArrayList.add("programming");
+        testArrayList.add("language");
 
         JPanel menuPanel = createMenuPanel();
         add(menuPanel, BorderLayout.WEST);
@@ -940,34 +951,171 @@ public class QuickReferencePortfolioGUI extends JFrame {
         return arrayListClassPanel;
     }
 
+    private String displayArray() {
+        String result = "\nArray: {";
+
+        for (String str : testArrayList) {
+            result += "\"" + str + "\", ";
+        }
+
+        result = result.substring(0, result.length() - 2);
+
+        result += "}";
+
+        return result;
+    }
+
     public JPanel createArrayList1stOptPanel() {
-        JPanel arrayList1stOptPanel = new JPanel(new BorderLayout());
+        JPanel arrayList1stOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea("Java Definition: Returns the number of elements in the list");
+        JTextArea array = new JTextArea(displayArray());
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        arrayList1stOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        array.setLineWrap(true);
+        array.setWrapStyleWord(true);
+        array.setFont(new Font("Default", Font.PLAIN, 20));
+        array.setSize(400, 20);
+
+        JButton refresh = new JButton("Refresh");
+        refresh.addActionListener(e -> {
+            array.setText(displayArray());
+        });
+
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "arrayList.size(): " + testArrayList.size());
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        arrayList1stOptPanel.add(javaDef, constr);
+        constr.gridy = 1;
+        arrayList1stOptPanel.add(array, constr);
+        constr.gridy = 2;
+        constr.gridwidth = 3;
+        arrayList1stOptPanel.add(button, constr);
+        constr.gridy = 3;
+        arrayList1stOptPanel.add(refresh, constr);
+
         return arrayList1stOptPanel;
     }
 
     public JPanel createArrayList2ndOptPanel() {
-        JPanel arrayList2ndOptPanel = new JPanel(new BorderLayout());
+        JPanel arrayList2ndOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea("Java Definition: Appends obj to end of list; returns true");
+        JTextArea array = new JTextArea(displayArray());
+
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        arrayList2ndOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        array.setLineWrap(true);
+        array.setWrapStyleWord(true);
+        array.setFont(new Font("Default", Font.PLAIN, 20));
+        array.setSize(400, 20);
+
+        JButton refresh = new JButton("Refresh");
+        refresh.addActionListener(e -> {
+            array.setText(displayArray());
+        });
+
+        JLabel label = new JLabel("Enter a string: ");
+        JTextField textField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            testArrayList.add(textField.getText());
+            array.setText(displayArray());
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        arrayList2ndOptPanel.add(javaDef, constr);
+        constr.gridy = 1;
+        arrayList2ndOptPanel.add(array, constr);
+        constr.gridy = 2;
+        constr.gridwidth = 1;
+        arrayList2ndOptPanel.add(label, constr);
+        constr.gridx = 1;
+        arrayList2ndOptPanel.add(textField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        arrayList2ndOptPanel.add(button, constr);
+        constr.gridy = 4;
+        arrayList2ndOptPanel.add(refresh, constr);
+
         return arrayList2ndOptPanel;
     }
 
     public JPanel createArrayList3rdOptPanel() {
-        JPanel arrayList3rdOptPanel = new JPanel(new BorderLayout());
+        JPanel arrayList3rdOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea(
                 "Java Definition: Inserts obj at position index (0 <= index <= size), moving elements at position index and higher to the right (adds 1 to their indices) and adds 1 to size");
+        JTextArea array = new JTextArea(displayArray());
+
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        arrayList3rdOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        array.setLineWrap(true);
+        array.setWrapStyleWord(true);
+        array.setFont(new Font("Default", Font.PLAIN, 20));
+        array.setSize(400, 20);
+
+        JButton refresh = new JButton("Refresh");
+        refresh.addActionListener(e -> {
+            array.setText(displayArray());
+        });
+
+        JLabel label = new JLabel("Enter a string: ");
+        JTextField textField = new JTextField(20);
+        JLabel labelIndex = new JLabel("Enter an index: ");
+        JTextField indexField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            int index;
+
+            try {
+                index = Integer.parseInt(indexField.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid integer");
+                return;
+            }
+
+            testArrayList.add(index, textField.getText());
+            array.setText(displayArray());
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        arrayList3rdOptPanel.add(javaDef, constr);
+        constr.gridy = 1;
+        arrayList3rdOptPanel.add(array, constr);
+        constr.gridy = 2;
+        constr.gridwidth = 1;
+        arrayList3rdOptPanel.add(label, constr);
+        constr.gridx = 1;
+        arrayList3rdOptPanel.add(textField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        arrayList3rdOptPanel.add(labelIndex, constr);
+        constr.gridx = 1;
+        arrayList3rdOptPanel.add(indexField, constr);
+        constr.gridy = 4;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        arrayList3rdOptPanel.add(button, constr);
+        constr.gridy = 5;
+        arrayList3rdOptPanel.add(refresh, constr);
+
         return arrayList3rdOptPanel;
     }
 
