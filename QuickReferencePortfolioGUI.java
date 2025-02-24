@@ -317,7 +317,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
                         + "\n"
                         + "\nSimple Definition: Creates a new String that is a copy of the String in parenthesis"
                         + "\n"
-                        + "\nTry it: ");
+                        + "\nTry it:");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -372,6 +372,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
                         + "\nSimple Definition: Returns the part of the String that starts at 1st arguement and ends at 2nd arguement - 1"
                         + "\n"
                         + "\nTry it: ");
+        javaDef.setLineWrap(true);
+        javaDef.setWrapStyleWord(true);
+        javaDef.setFont(new Font("Default", Font.PLAIN, 20));
         javaDef.setSize(400, 100);
 
         JLabel labelInput = new JLabel("Enter a string: ");
@@ -381,16 +384,13 @@ public class QuickReferencePortfolioGUI extends JFrame {
         JTextField startTextField = new JTextField(20);
         JTextField endingTextField = new JTextField(20);
         JButton button = new JButton("Submit");
+
         button.addActionListener(e -> {
             int startIndex = Integer.parseInt(startTextField.getText());
             int endingIndex = Integer.parseInt(endingTextField.getText());
             JOptionPane.showMessageDialog(null, "string.substring(" + startIndex + ", " + endingIndex + "): "
                     + inputField.getText().substring(startIndex, endingIndex));
         });
-
-        javaDef.setLineWrap(true);
-        javaDef.setWrapStyleWord(true);
-        javaDef.setFont(new Font("Default", Font.PLAIN, 20));
 
         constr.gridwidth = GridBagConstraints.REMAINDER;
         string3rdOptPanel.add(javaDef, constr);
@@ -558,7 +558,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
         JPanel string7thOptPanel = new JPanel(new GridBagLayout());
         GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea(
-                "Java Definition: Returns a value <0 if this is less than other; returns zero if this is equal to other; returns a value >0 if this is greater than other");
+                "Java Definition: Returns a value <0 if this is less than other; returns zero if this is equal to other; returns a value >0 if this is greater than other"
+                        + "\n"
+                        + "\nSimple Definition: Returns a value <0 if the string is less than the arguement; returns zero if the string is equal to the arguement; returns a value >0 if the string is greater than the arguement"
+                        + "\n"
+                        + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -656,7 +660,7 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createInteger4thOptPanel() {
         JPanel integer4thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Integer int"
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Integer as an int"
                 + "\n"
                 + "\nTry it: ");
         javaDef.setLineWrap(true);
@@ -685,7 +689,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
     public JPanel createDouble1stOptPanel() {
         JPanel double1stOptPanel = new JPanel(new BorderLayout());
         JTextArea javaDef = new JTextArea(
-                "Java Definition: Constructs a new Double object that represents the specified double value");
+                "Java Definition: Constructs a new Double object that represents the specified double value"
+                        + "\n"
+                        + "\nSimple Definition: Creates a new Double that is a copy of the double in parenthesis"
+                        + "\n"
+                        + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -695,7 +703,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createDouble2ndOptPanel() {
         JPanel double2ndOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Double as a double");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of this Double as a double"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -723,7 +733,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createMath1stOptPanel() {
         JPanel math1stOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the absolute value of an int value");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the absolute value of an int value"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -733,7 +745,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createMath2ndOptPanel() {
         JPanel math2ndOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the absolute value of a double value");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the absolute value of a double value"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -743,8 +757,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createMath3rdOptPanel() {
         JPanel math3rdOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea(
-                "Java Definition: Returns the value of the first parameter raised to the power of the second parameter");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the value of the first parameter raised to the power of the second parameter"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -754,7 +769,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createMath4thOptPanel() {
         JPanel math4thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the positive square root of a double value");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the positive square root of a double value"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -764,8 +781,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createMath5thOptPanel() {
         JPanel math5thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea(
-                "Java Definition: Returns a double value greater than or equal to 0.0 and less than 1.0");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns a double value greater than or equal to 0.0 and less than 1.0"
+                    + "\n"
+                    + "\nSimple Definition: Returns a double value: 0.0 <= x < 1.0"
+                    + "\n"
+                    + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -792,7 +812,9 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createArrayList1stOptPanel() {
         JPanel arrayList1stOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the number of elements in the list");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the number of elements in the list"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -802,7 +824,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createArrayList2ndOptPanel() {
         JPanel arrayList2ndOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Appends obj to end of list; returns true");
+        JTextArea javaDef = new JTextArea("Java Definition: Appends obj to end of list; returns true"
+                + "\n"
+                + "\nSimple Definition: Adds an element to the end of the list; returns true if successful"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -813,7 +839,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
     public JPanel createArrayList3rdOptPanel() {
         JPanel arrayList3rdOptPanel = new JPanel(new BorderLayout());
         JTextArea javaDef = new JTextArea(
-                "Java Definition: Inserts obj at position index (0 <= index <= size), moving elements at position index and higher to the right (adds 1 to their indices) and adds 1 to size");
+                "Java Definition: Inserts obj at position index (0 <= index <= size), moving elements at position index and higher to the right (adds 1 to their indices) and adds 1 to size"
+                        + "\n"
+                        + "\nSimple Definition: Adds an element to the list at the specified index; moves elements to the right to make room for the new element and increases size of list by 1"
+                        + "\n"
+                        + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -823,7 +853,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createArrayList4thOptPanel() {
         JPanel arrayList4thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Returns the element at position index in the list");
+        JTextArea javaDef = new JTextArea("Java Definition: Returns the element at position index in the list"
+                + "\n"
+                + "\nSimple Definition: Returns the element at the specified index in the list"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -834,7 +868,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
     public JPanel createArrayList5thOptPanel() {
         JPanel arrayList5thOptPanel = new JPanel(new BorderLayout());
         JTextArea javaDef = new JTextArea(
-                "Java Definition: Replaces the element at position index with obj; returns the element formerly at position index");
+                "Java Definition: Replaces the element at position index with obj; returns the element formerly at position index"
+                        + "\n"
+                        + "\nSimple Definition: Replaces the element at the specified index with the new specified element; returns the element that was replaced"
+                        + "\n"
+                        + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -844,8 +882,11 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createArrayList6thOptPanel() {
         JPanel arrayList6thOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea(
-                "Java Definition: Removes element from position index, moving elements at position index + 1 and higher to the left (subtracts 1 from their indices) and subtracts 1 from size; returns the element formerly at position index");
+        JTextArea javaDef = new JTextArea("Java Definition: Removes element from position index, moving elements at position index + 1 and higher to the left (subtracts 1 from their indices) and subtracts 1 from size; returns the element formerly at position index"
+                + "\n"
+                + "\nSimple Definition: Removes the element at the specified index; moves elements to the left to fill the gap and decreases size of list by 1; returns the element that was removed"
+                + "\n"
+                + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
