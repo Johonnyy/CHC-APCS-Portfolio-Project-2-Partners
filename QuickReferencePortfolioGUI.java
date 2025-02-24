@@ -614,11 +614,12 @@ public class QuickReferencePortfolioGUI extends JFrame {
 
     public JPanel createInteger1stOptPanel() {
         JPanel integer1stOptPanel = new JPanel(new BorderLayout());
-        JTextArea javaDef = new JTextArea("Java Definition: Constructs a new Integer object that represents the specified int value"
-                + "\n"
-                + "\nSimple Definition: Creates a new Integer that is a copy of the int in parenthesis (Clarification: Integer is an object, int is a number)"
-                + "\n"
-                + "\nTry it: ");
+        JTextArea javaDef = new JTextArea(
+                "Java Definition: Constructs a new Integer object that represents the specified int value"
+                        + "\n"
+                        + "\nSimple Definition: Creates a new Integer that is a copy of the int in parenthesis (Clarification: Integer is an object, int is a number)"
+                        + "\n"
+                        + "\nTry it: ");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
@@ -722,54 +723,203 @@ public class QuickReferencePortfolioGUI extends JFrame {
     }
 
     public JPanel createMath1stOptPanel() {
-        JPanel math1stOptPanel = new JPanel(new BorderLayout());
+        JPanel math1stOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea("Java Definition: Returns the absolute value of an int value");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        math1stOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        JLabel label = new JLabel("Enter an integer: ");
+        JTextField textField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            int value;
+
+            try {
+                value = Integer.parseInt(textField.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid integer");
+                return;
+            }
+
+            JOptionPane.showMessageDialog(null, "Math.abs(" + value + "): " + Math.abs(value));
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        math1stOptPanel.add(javaDef, constr);
+        constr.gridwidth = 1;
+        constr.gridy = 1;
+        math1stOptPanel.add(label, constr);
+        constr.gridx = 1;
+        math1stOptPanel.add(textField, constr);
+        constr.gridy = 2;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        math1stOptPanel.add(button, constr);
+
         return math1stOptPanel;
     }
 
     public JPanel createMath2ndOptPanel() {
-        JPanel math2ndOptPanel = new JPanel(new BorderLayout());
+        JPanel math2ndOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea("Java Definition: Returns the absolute value of a double value");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        math2ndOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        JLabel label = new JLabel("Enter a double: ");
+        JTextField textField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            double value;
+
+            try {
+                value = Double.parseDouble(textField.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid double");
+                return;
+            }
+
+            JOptionPane.showMessageDialog(null, "Math.abs(" + value + "): " + Math.abs(value));
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        math2ndOptPanel.add(javaDef, constr);
+        constr.gridwidth = 1;
+        constr.gridy = 1;
+        math2ndOptPanel.add(label, constr);
+        constr.gridx = 1;
+        math2ndOptPanel.add(textField, constr);
+        constr.gridy = 2;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        math2ndOptPanel.add(button, constr);
+
         return math2ndOptPanel;
     }
 
     public JPanel createMath3rdOptPanel() {
-        JPanel math3rdOptPanel = new JPanel(new BorderLayout());
+        JPanel math3rdOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea(
                 "Java Definition: Returns the value of the first parameter raised to the power of the second parameter");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        math3rdOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        JLabel labelBase = new JLabel("Enter the base: ");
+        JTextField baseField = new JTextField(20);
+        JLabel labelExponent = new JLabel("Enter the exponent: ");
+        JTextField exponentField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            double base;
+            double exponent;
+
+            try {
+                base = Double.parseDouble(baseField.getText());
+                exponent = Double.parseDouble(exponentField.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter valid numbers");
+                return;
+            }
+
+            JOptionPane.showMessageDialog(null,
+                    "Math.pow(" + base + ", " + exponent + "): " + Math.pow(base, exponent));
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        math3rdOptPanel.add(javaDef, constr);
+        constr.gridwidth = 1;
+        constr.gridy = 1;
+        math3rdOptPanel.add(labelBase, constr);
+        constr.gridx = 1;
+        math3rdOptPanel.add(baseField, constr);
+        constr.gridy = 2;
+        constr.gridx = 0;
+        math3rdOptPanel.add(labelExponent, constr);
+        constr.gridx = 1;
+        math3rdOptPanel.add(exponentField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        math3rdOptPanel.add(button, constr);
+
         return math3rdOptPanel;
     }
 
     public JPanel createMath4thOptPanel() {
-        JPanel math4thOptPanel = new JPanel(new BorderLayout());
+        JPanel math4thOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea("Java Definition: Returns the positive square root of a double value");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        math4thOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        JLabel label = new JLabel("Enter a double: ");
+        JTextField textField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            double value;
+
+            try {
+                value = Double.parseDouble(textField.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid double");
+                return;
+            }
+
+            JOptionPane.showMessageDialog(null, "Math.sqrt(" + value + "): " + Math.sqrt(value));
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        math4thOptPanel.add(javaDef, constr);
+        constr.gridwidth = 1;
+        constr.gridy = 1;
+        math4thOptPanel.add(label, constr);
+        constr.gridx = 1;
+        math4thOptPanel.add(textField, constr);
+        constr.gridy = 2;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        math4thOptPanel.add(button, constr);
+
         return math4thOptPanel;
     }
 
     public JPanel createMath5thOptPanel() {
-        JPanel math5thOptPanel = new JPanel(new BorderLayout());
+        JPanel math5thOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
         JTextArea javaDef = new JTextArea(
                 "Java Definition: Returns a double value greater than or equal to 0.0 and less than 1.0");
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        math5thOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "Math.random(): " + Math.random());
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        math5thOptPanel.add(javaDef, constr);
+        constr.gridy = 1;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        math5thOptPanel.add(button, constr);
+
         return math5thOptPanel;
     }
     // --------------------------------------------------------------------------
