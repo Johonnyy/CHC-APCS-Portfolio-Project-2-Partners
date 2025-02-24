@@ -1120,34 +1120,190 @@ public class QuickReferencePortfolioGUI extends JFrame {
     }
 
     public JPanel createArrayList4thOptPanel() {
-        JPanel arrayList4thOptPanel = new JPanel(new BorderLayout());
+        JPanel arrayList4thOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
+
         JTextArea javaDef = new JTextArea("Java Definition: Returns the element at position index in the list");
+        JTextArea array = new JTextArea(displayArray());
+
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        arrayList4thOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        array.setLineWrap(true);
+        array.setWrapStyleWord(true);
+        array.setFont(new Font("Default", Font.PLAIN, 20));
+        array.setSize(400, 20);
+
+        JButton refresh = new JButton("Refresh");
+        refresh.addActionListener(e -> {
+            array.setText(displayArray());
+        });
+
+        JLabel label = new JLabel("Enter an index: ");
+        JTextField indexField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            int index;
+
+            try {
+                index = Integer.parseInt(indexField.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid integer");
+                return;
+            }
+
+            JOptionPane.showMessageDialog(null, "arrayList.get(" + index + "): " + testArrayList.get(index));
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        arrayList4thOptPanel.add(javaDef, constr);
+        constr.gridy = 1;
+        arrayList4thOptPanel.add(array, constr);
+        constr.gridy = 2;
+        constr.gridwidth = 1;
+        arrayList4thOptPanel.add(label, constr);
+        constr.gridx = 1;
+        arrayList4thOptPanel.add(indexField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        arrayList4thOptPanel.add(button, constr);
+        constr.gridy = 4;
+        arrayList4thOptPanel.add(refresh, constr);
+
         return arrayList4thOptPanel;
     }
 
     public JPanel createArrayList5thOptPanel() {
-        JPanel arrayList5thOptPanel = new JPanel(new BorderLayout());
+        JPanel arrayList5thOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
+
         JTextArea javaDef = new JTextArea(
                 "Java Definition: Replaces the element at position index with obj; returns the element formerly at position index");
+        JTextArea array = new JTextArea(displayArray());
+
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        arrayList5thOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        array.setLineWrap(true);
+        array.setWrapStyleWord(true);
+        array.setFont(new Font("Default", Font.PLAIN, 20));
+        array.setSize(400, 20);
+
+        JButton refresh = new JButton("Refresh");
+        refresh.addActionListener(e -> {
+            array.setText(displayArray());
+        });
+
+        JLabel label = new JLabel("Enter an index: ");
+        JTextField indexField = new JTextField(20);
+        JLabel labelString = new JLabel("Enter a string: ");
+        JTextField stringField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            int index;
+
+            try {
+                index = Integer.parseInt(indexField.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid integer");
+                return;
+            }
+
+            String replaced = testArrayList.set(index, stringField.getText());
+            array.setText(displayArray());
+            JOptionPane.showMessageDialog(null, "arrayList.set(" + index + ", \"" + stringField.getText() + "\"): "
+                    + replaced);
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        arrayList5thOptPanel.add(javaDef, constr);
+        constr.gridy = 1;
+        arrayList5thOptPanel.add(array, constr);
+        constr.gridy = 2;
+        constr.gridwidth = 1;
+        arrayList5thOptPanel.add(label, constr);
+        constr.gridx = 1;
+        arrayList5thOptPanel.add(indexField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        arrayList5thOptPanel.add(labelString, constr);
+        constr.gridx = 1;
+        arrayList5thOptPanel.add(stringField, constr);
+        constr.gridy = 4;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        arrayList5thOptPanel.add(button, constr);
+        constr.gridy = 5;
+        arrayList5thOptPanel.add(refresh, constr);
+
         return arrayList5thOptPanel;
     }
 
     public JPanel createArrayList6thOptPanel() {
-        JPanel arrayList6thOptPanel = new JPanel(new BorderLayout());
+        JPanel arrayList6thOptPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
+
         JTextArea javaDef = new JTextArea(
                 "Java Definition: Removes element from position index, moving elements at position index + 1 and higher to the left (subtracts 1 from their indices) and subtracts 1 from size; returns the element formerly at position index");
+        JTextArea array = new JTextArea(displayArray());
+
         javaDef.setLineWrap(true);
         javaDef.setWrapStyleWord(true);
         javaDef.setFont(new Font("Default", Font.PLAIN, 20));
-        arrayList6thOptPanel.add(javaDef);
+        javaDef.setSize(400, 100);
+
+        array.setLineWrap(true);
+        array.setWrapStyleWord(true);
+        array.setFont(new Font("Default", Font.PLAIN, 20));
+        array.setSize(400, 20);
+
+        JButton refresh = new JButton("Refresh");
+        refresh.addActionListener(e -> {
+            array.setText(displayArray());
+        });
+
+        JLabel label = new JLabel("Enter an index: ");
+        JTextField indexField = new JTextField(20);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(e -> {
+            int index;
+
+            try {
+                index = Integer.parseInt(indexField.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid integer");
+                return;
+            }
+
+            String removed = testArrayList.remove(index);
+            array.setText(displayArray());
+            JOptionPane.showMessageDialog(null, "arrayList.remove(" + index + "): " + removed);
+        });
+
+        constr.gridwidth = GridBagConstraints.REMAINDER;
+        arrayList6thOptPanel.add(javaDef, constr);
+        constr.gridy = 1;
+        arrayList6thOptPanel.add(array, constr);
+        constr.gridy = 2;
+        constr.gridwidth = 1;
+        arrayList6thOptPanel.add(label, constr);
+        constr.gridx = 1;
+        arrayList6thOptPanel.add(indexField, constr);
+        constr.gridy = 3;
+        constr.gridx = 0;
+        constr.gridwidth = 3;
+        arrayList6thOptPanel.add(button, constr);
+        constr.gridy = 4;
+        arrayList6thOptPanel.add(refresh, constr);
+
         return arrayList6thOptPanel;
     }
     // --------------------------------------------------------------------------
